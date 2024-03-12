@@ -110,7 +110,7 @@ $breakpoints: (
 // Grid
 // ---
 
-$container-max-width: calc(1400 / $root-font-size * 1rem);
+$container-max-width: calc(1200 / $root-font-size * 1rem);
 
 // The gutter between columns
 $grid-gutter: $space-m;
@@ -293,12 +293,19 @@ a:active {
   display: flow-root;
 
   &--primary{
-    background-color: $color-primary-lighter;
+    background-color: $color-primary;
+    color: white;
   }
 
   &--dark{
     background-color: $color-text;
     color: white;
+  }
+
+  &--xl{
+    @include mq(bp2){
+      padding: $space-xl $space-xl $space-m $space-xl;
+    }
   }
 }
 
@@ -309,6 +316,9 @@ a:active {
 */
 
 .o-container {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: $container-max-width;
 }
 
 /*
@@ -332,14 +342,17 @@ a:active {
 
 .o-layout__item {
   flex-basis: 100%;
+
 }
 
 /* gutter modifiers, these affect o-layout__item too */
 
 .o-layout--gutter {
+  margin: 0 calc($grid-gutter * -1);
 }
 
 .o-layout--gutter > .o-layout__item {
+  padding: 0 $grid-gutter;
 }
 
 /* reverse horizontal row modifier */

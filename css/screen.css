@@ -175,11 +175,17 @@ a:active {
   display: flow-root;
 }
 .o-row--primary {
-  background-color: #748ffc;
+  background-color: #4c6ef5;
+  color: white;
 }
 .o-row--dark {
   background-color: #212529;
   color: white;
+}
+@media (min-width: 48.0625em) {
+  .o-row--xl {
+    padding: 3rem 3rem 1.5rem 3rem;
+  }
 }
 
 /*
@@ -187,6 +193,12 @@ a:active {
     ---
     Creates a horizontal container that sets de global max-width
 */
+.o-container {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 75rem;
+}
+
 /*
     Objects: Layout
     ---
@@ -209,6 +221,14 @@ a:active {
 }
 
 /* gutter modifiers, these affect o-layout__item too */
+.o-layout--gutter {
+  margin: 0 -1.5rem;
+}
+
+.o-layout--gutter > .o-layout__item {
+  padding: 0 1.5rem;
+}
+
 /* reverse horizontal row modifier */
 .o-layout--row-reverse {
   flex-direction: row-reverse;
